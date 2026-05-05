@@ -193,7 +193,7 @@ export function initMotion() {
       } catch (err) {
         console.error(err);
         if (status) {
-          status.textContent = "Something went wrong. Email cdelong@majormetals.net directly?";
+          status.textContent = "Something went wrong. Please try again or use the contact form.";
           status.dataset.state = "error";
         }
       } finally {

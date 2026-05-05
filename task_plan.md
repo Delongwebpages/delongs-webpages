@@ -1,6 +1,6 @@
 # Task Plan: Delong's Webpages — Sales Site
 
-**Owner:** cdelong@majormetals.net
+**Owner:** delong.cullen@gmail.com
 **Created:** 2026-05-05
 **Status:** in_progress
 

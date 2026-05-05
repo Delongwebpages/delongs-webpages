@@ -61,7 +61,7 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
     return json(400, { error: "Message too long" });
   }
 
-  const recipient = env.CONTACT_RECIPIENT || "cdelong@majormetals.net";
+  const recipient = env.CONTACT_RECIPIENT || "delong.cullen@gmail.com";
 
   const subject = `New lead: ${name}${data.business ? ` (${data.business})` : ""}`;
   const text = [

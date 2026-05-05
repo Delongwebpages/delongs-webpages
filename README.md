@@ -87,7 +87,7 @@ Edit the `quotes` array in `src/components/Testimonials.astro`. Remove the
 ### Change the contact recipient
 
 Set `CONTACT_RECIPIENT` in the Cloudflare Pages dashboard (Settings → Environment Variables).
-Defaults to `cdelong@majormetals.net` if unset.
+Defaults to `delong.cullen@gmail.com` if unset.
 
 ### Wire real email delivery
 

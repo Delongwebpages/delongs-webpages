@@ -1,0 +1,113 @@
+---
+const tiers = [
+  {
+    name: "Light",
+    price: 25,
+    tagline: "Set it and forget it",
+    features: [
+      { label: "Hosting & domain renewal", value: "Included" },
+      { label: "Content updates / month", value: "1 small" },
+      { label: "New photos added", value: "Add-on" },
+      { label: "Seasonal page changes", value: "Add-on" },
+      { label: "Response time", value: "48 hours" },
+      { label: "Phone support", value: "Email only" },
+    ],
+  },
+  {
+    name: "Standard",
+    price: 60,
+    tagline: "For businesses that move",
+    featured: true,
+    features: [
+      { label: "Hosting & domain renewal", value: "Included" },
+      { label: "Content updates / month", value: "Up to 4" },
+      { label: "New photos added", value: "Up to 10/mo" },
+      { label: "Seasonal page changes", value: "Included" },
+      { label: "Response time", value: "24 hours" },
+      { label: "Phone support", value: "Yes" },
+    ],
+  },
+  {
+    name: "Full",
+    price: 120,
+    tagline: "We handle everything",
+    features: [
+      { label: "Hosting & domain renewal", value: "Included" },
+      { label: "Content updates / month", value: "Unlimited" },
+      { label: "New photos added", value: "Unlimited" },
+      { label: "Seasonal page changes", value: "Included" },
+      { label: "Response time", value: "Same day" },
+      { label: "Phone support", value: "Yes, priority" },
+    ],
+  },
+];
+---
+
+<section class="section relative" id="pricing">
+  <div class="absolute inset-0 -z-10 pointer-events-none" aria-hidden="true">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] aspect-square max-w-[800px] rounded-full bg-[radial-gradient(circle,rgba(124,92,255,0.12),transparent_60%)] blur-3xl"></div>
+  </div>
+
+  <div class="container-page">
+    <div class="max-w-3xl mx-auto text-center">
+      <span class="eyebrow reveal">Pricing</span>
+      <h2 class="reveal mt-6 text-4xl sm:text-5xl md:text-6xl font-display font-semibold">
+        One price to build. <span class="gradient-text">One price to maintain.</span>
+      </h2>
+      <p class="reveal mt-6 text-lg text-[var(--color-fg-muted)]">
+        No hourly billing. No agency fluff. No surprise invoices.
+      </p>
+    </div>
+
+    <!-- Build cost spotlight -->
+    <div class="reveal mt-16 max-w-3xl mx-auto card p-8 md:p-10 text-center bg-gradient-to-b from-[rgba(124,92,255,0.06)] to-transparent">
+      <p class="text-xs uppercase tracking-[0.2em] text-[var(--color-fg-dim)] mb-2">Build cost</p>
+      <div class="font-display font-semibold leading-none">
+        <span class="text-5xl md:text-7xl gradient-text">$1,000</span>
+        <span class="text-xl md:text-2xl text-[var(--color-fg-muted)] ml-2">/ page</span>
+      </div>
+      <p class="mt-5 text-[var(--color-fg-muted)] max-w-xl mx-auto">
+        That's everything: design, code, content, mobile, SEO setup, launch. One price, one invoice, one developer.
+      </p>
+    </div>
+
+    <!-- Maintenance plans -->
+    <div class="mt-20">
+      <p class="text-center text-xs uppercase tracking-[0.2em] text-[var(--color-fg-dim)] mb-3 reveal">Optional monthly maintenance</p>
+      <h3 class="text-center text-2xl md:text-3xl font-display font-semibold reveal">Pick a plan, or don't — your choice.</h3>
+
+      <div class="mt-12 grid md:grid-cols-3 gap-5 items-stretch">
+        {tiers.map((t) => (
+          <div class={`reveal relative card p-7 flex flex-col ${t.featured ? "ring-2 ring-[var(--color-accent)] bg-gradient-to-b from-[rgba(124,92,255,0.1)] to-transparent md:scale-105 md:-my-2 z-10" : ""}`}>
+            {t.featured && (
+              <div class="absolute -top-3 left-1/2 -translate-x-1/2 inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[var(--color-accent)] text-[var(--color-bg)] whitespace-nowrap">
+                ★ Most popular
+              </div>
+            )}
+            <h4 class="text-xl font-display font-semibold">{t.name}</h4>
+            <p class="text-sm text-[var(--color-fg-muted)]">{t.tagline}</p>
+            <div class="mt-6 font-display">
+              <span class="text-5xl font-semibold">${t.price}</span>
+              <span class="text-[var(--color-fg-muted)] text-base">/mo</span>
+            </div>
+            <ul class="mt-7 space-y-3 text-sm flex-1">
+              {t.features.map((f) => (
+                <li class="flex items-start justify-between gap-3 pb-3 border-b border-[var(--color-border)] last:border-0">
+                  <span class="text-[var(--color-fg-muted)]">{f.label}</span>
+                  <span class="font-medium text-right">{f.value}</span>
+                </li>
+              ))}
+            </ul>
+            <a href="#contact" class={`mt-7 btn ${t.featured ? "btn-primary" : "btn-ghost"} w-full`}>
+              Choose {t.name}
+            </a>
+          </div>
+        ))}
+      </div>
+
+      <p class="mt-10 text-center text-sm text-[var(--color-fg-dim)] reveal">
+        Maintenance is month-to-month. Cancel anytime. Switch tiers anytime.
+      </p>
+    </div>
+  </div>
+</section>

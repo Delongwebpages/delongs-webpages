@@ -1,0 +1,85 @@
+---
+const faqs = [
+  {
+    q: "How long does a site take?",
+    a: "Most builds go from quote to live in 1–3 weeks. A single-page site can launch in under a week if you're decisive. I tell you the realistic timeline up front, then I hit it.",
+  },
+  {
+    q: "Do I really pay $1,000 per page? What's a 'page'?",
+    a: "Yes — flat $1,000 per distinct page (Home, About, Services, Contact, etc.). That includes design, code, mobile, SEO setup, and revisions. No hourly billing, no surprises. We agree on page count before I start.",
+  },
+  {
+    q: "Do I have to pick a maintenance plan?",
+    a: "No. Maintenance is optional and month-to-month. You can launch, run on your own, and come back later if you need updates. Most clients pick Standard ($60/mo) once they realize they don't want to touch the code themselves.",
+  },
+  {
+    q: "What about hosting and the domain?",
+    a: "Hosting is included with any maintenance plan. The site runs on Cloudflare's global network — fast everywhere. If you're not on a plan, hosting runs you about $0–10/mo on Cloudflare directly. Domain registration is your call (around $10–15/year).",
+  },
+  {
+    q: "Will my site rank in Google?",
+    a: "I build with on-page SEO baked in: clean code, fast load, proper meta tags, structured data, semantic HTML. That gets you to the starting line. Long-term ranking depends on your content and reviews — I'll tell you exactly what to do, but I won't sell you a $2,000/mo SEO contract you don't need.",
+  },
+  {
+    q: "Can I update the site myself?",
+    a: "Depends on what you mean. Small text/photo edits are what maintenance plans are for — you email me, I do it within the response time you picked. If you want to write blog posts yourself, I can wire up a simple admin so you can. Tell me on the call.",
+  },
+  {
+    q: "What if I already have a Wix / Squarespace / WordPress site?",
+    a: "I'll rebuild it on modern code — keeping your content, your branding, your SEO rankings. Migration is part of the build cost. You'll come out of it with a faster site that you actually own.",
+  },
+  {
+    q: "What happens if I want to leave the maintenance plan?",
+    a: "You keep the site. The code is yours. I'll hand off the GitHub repo and walk you (or your next developer) through deployment. Zero lock-in. That's the whole point.",
+  },
+];
+---
+
+<section class="section bg-[var(--color-bg-surface)]/40 border-y border-[var(--color-border)]" id="faq">
+  <div class="container-page">
+    <div class="grid lg:grid-cols-3 gap-12">
+      <div class="lg:col-span-1">
+        <span class="eyebrow reveal">Common questions</span>
+        <h2 class="reveal mt-6 text-4xl sm:text-5xl font-display font-semibold">
+          You're <span class="gradient-text">probably wondering…</span>
+        </h2>
+        <p class="reveal mt-6 text-[var(--color-fg-muted)]">
+          Don't see your question? Ask me on the 15-minute call. No question is too small.
+        </p>
+        <a href="#contact" class="reveal mt-8 inline-flex btn btn-ghost">Book a call →</a>
+      </div>
+
+      <div class="lg:col-span-2">
+        <ul class="divide-y divide-[var(--color-border)] border-y border-[var(--color-border)]">
+          {faqs.map((f, i) => (
+            <li data-faq class="py-2 reveal">
+              <button
+                type="button"
+                aria-expanded="false"
+                aria-controls={`faq-${i}`}
+                class="w-full flex items-center justify-between gap-6 py-4 text-left text-lg font-medium hover:text-[var(--color-accent-2)] transition-colors"
+              >
+                <span>{f.q}</span>
+                <span class="faq-icon shrink-0 inline-flex h-8 w-8 items-center justify-center rounded-full border border-[var(--color-border-strong)] transition-transform">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                </span>
+              </button>
+              <div id={`faq-${i}`} data-faq-panel class="overflow-hidden max-h-0 transition-[max-height] duration-500 ease-out">
+                <p class="pb-5 pr-12 text-[var(--color-fg-muted)] leading-relaxed">{f.a}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  [data-faq].is-open .faq-icon {
+    transform: rotate(45deg);
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+    color: var(--color-bg);
+  }
+</style>

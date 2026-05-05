@@ -1,0 +1,45 @@
+---
+const items = [
+  {
+    problem: "Slow, clunky builder sites",
+    promise: "Hand-coded, loads in under 2 seconds",
+    icon: `<path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z"/>`,
+  },
+  {
+    problem: "Generic templates everyone has",
+    promise: "Designed around your business, not a Wix preset",
+    icon: `<path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>`,
+  },
+  {
+    problem: "Disappearing developers",
+    promise: "One person, real phone number, ongoing support",
+    icon: `<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/>`,
+  },
+];
+---
+
+<section class="section">
+  <div class="container-page">
+    <div class="max-w-3xl">
+      <span class="eyebrow reveal">The problem</span>
+      <h2 class="reveal mt-6 text-4xl sm:text-5xl md:text-6xl font-display font-semibold">
+        Most small business websites <span class="gradient-text">cost too much, do too little, and break too often.</span>
+      </h2>
+      <p class="reveal mt-6 text-lg text-[var(--color-fg-muted)] leading-relaxed">
+        You don't need a $20,000 agency project. You need a fast, modern site that brings the phone in — and a person who answers when something needs changing.
+      </p>
+    </div>
+
+    <div class="mt-16 grid md:grid-cols-3 gap-5">
+      {items.map((item) => (
+        <div class="reveal card p-7 group">
+          <div class="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-[var(--color-bg-elevated)] border border-[var(--color-border-strong)] mb-5 group-hover:border-[var(--color-accent)] transition-colors">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[var(--color-accent-2)]" set:html={item.icon} />
+          </div>
+          <p class="text-sm text-[var(--color-fg-dim)] line-through mb-2">{item.problem}</p>
+          <p class="text-lg font-medium text-[var(--color-fg)] leading-snug">{item.promise}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

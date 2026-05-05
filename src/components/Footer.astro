@@ -1,0 +1,50 @@
+---
+import Wordmark from "./Wordmark.astro";
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-[var(--color-border)] bg-[var(--color-bg-surface)]/60">
+  <div class="container-page py-16">
+    <div class="grid md:grid-cols-3 gap-10 md:gap-16">
+      <div>
+        <Wordmark />
+        <p class="mt-4 text-sm text-[var(--color-fg-muted)] max-w-xs leading-relaxed">
+          Fast, hand-built websites for small businesses. One developer. One clear price. One honest answer.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="text-xs uppercase tracking-[0.2em] text-[var(--color-fg-dim)] font-semibold">Sitemap</h3>
+        <ul class="mt-4 space-y-2 text-sm">
+          <li><a href="#services" class="text-[var(--color-fg-muted)] hover:text-[var(--color-fg)] transition-colors">Services</a></li>
+          <li><a href="#process" class="text-[var(--color-fg-muted)] hover:text-[var(--color-fg)] transition-colors">Process</a></li>
+          <li><a href="#portfolio" class="text-[var(--color-fg-muted)] hover:text-[var(--color-fg)] transition-colors">Work</a></li>
+          <li><a href="#pricing" class="text-[var(--color-fg-muted)] hover:text-[var(--color-fg)] transition-colors">Pricing</a></li>
+          <li><a href="#faq" class="text-[var(--color-fg-muted)] hover:text-[var(--color-fg)] transition-colors">FAQ</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-xs uppercase tracking-[0.2em] text-[var(--color-fg-dim)] font-semibold">Contact</h3>
+        <ul class="mt-4 space-y-2 text-sm">
+          <li>
+            <a href="mailto:cdelong@majormetals.net" class="text-[var(--color-fg-muted)] hover:text-[var(--color-fg)] transition-colors">
+              cdelong@majormetals.net
+            </a>
+          </li>
+          <li>
+            <a href="#contact" class="inline-flex items-center gap-1.5 mt-2 text-[var(--color-accent-2)] hover:text-[var(--color-fg)] transition-colors">
+              Book a 15-minute call
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-12 pt-8 border-t border-[var(--color-border)] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[var(--color-fg-dim)]">
+      <span>© {year} Delong's Webpages. All rights reserved.</span>
+      <span>Hand-built. Hosted on Cloudflare. <span class="text-[var(--color-accent-2)]">Loaded in milliseconds.</span></span>
+    </div>
+  </div>
+</footer>

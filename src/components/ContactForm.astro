@@ -1,0 +1,120 @@
+---
+---
+
+<form
+  data-contact-form
+  class="reveal card p-6 md:p-8 space-y-5"
+  novalidate
+>
+  <div class="grid sm:grid-cols-2 gap-5">
+    <label class="block">
+      <span class="block text-sm font-medium mb-2">Your name</span>
+      <input
+        type="text"
+        name="name"
+        required
+        autocomplete="name"
+        class="form-input"
+        placeholder="Jane Doe"
+      />
+    </label>
+    <label class="block">
+      <span class="block text-sm font-medium mb-2">Email</span>
+      <input
+        type="email"
+        name="email"
+        required
+        autocomplete="email"
+        class="form-input"
+        placeholder="jane@yourbusiness.com"
+      />
+    </label>
+  </div>
+
+  <div class="grid sm:grid-cols-2 gap-5">
+    <label class="block">
+      <span class="block text-sm font-medium mb-2">Business name</span>
+      <input
+        type="text"
+        name="business"
+        autocomplete="organization"
+        class="form-input"
+        placeholder="Acme Co."
+      />
+    </label>
+    <label class="block">
+      <span class="block text-sm font-medium mb-2">Phone <span class="text-[var(--color-fg-dim)] font-normal">(optional)</span></span>
+      <input
+        type="tel"
+        name="phone"
+        autocomplete="tel"
+        class="form-input"
+        placeholder="(555) 555-0100"
+      />
+    </label>
+  </div>
+
+  <label class="block">
+    <span class="block text-sm font-medium mb-2">What kind of site do you need?</span>
+    <select name="project_type" class="form-input" required>
+      <option value="">Pick one…</option>
+      <option value="single">Single-page site</option>
+      <option value="multi">Multi-page site (3+ pages)</option>
+      <option value="redesign">Redesign / rescue an existing site</option>
+      <option value="unsure">Not sure — let's talk</option>
+    </select>
+  </label>
+
+  <label class="block">
+    <span class="block text-sm font-medium mb-2">Tell me about it</span>
+    <textarea
+      name="message"
+      rows="4"
+      required
+      class="form-input resize-y"
+      placeholder="What does your business do? What's the goal of the site? Anything I should know?"
+    ></textarea>
+  </label>
+
+  <!-- Honeypot -->
+  <div class="absolute -left-[9999px]" aria-hidden="true">
+    <label>Company (leave blank)<input type="text" name="company" tabindex="-1" autocomplete="off" /></label>
+  </div>
+
+  <div class="flex flex-col sm:flex-row sm:items-center gap-4 pt-2">
+    <button type="submit" class="btn btn-primary magnetic">
+      Send it
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+    </button>
+    <p class="text-xs text-[var(--color-fg-dim)] flex-1">
+      I read every message. No spam, no funnels, no list signup.
+    </p>
+  </div>
+
+  <p data-form-status class="text-sm" role="status" aria-live="polite"></p>
+</form>
+
+<style>
+  .form-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background-color: var(--color-bg-elevated);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    color: var(--color-fg);
+    font-size: 0.9375rem;
+    font-family: inherit;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  .form-input::placeholder {
+    color: var(--color-fg-dim);
+  }
+  .form-input:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(124, 92, 255, 0.15);
+  }
+  [data-form-status][data-state="success"] { color: #4ade80; }
+  [data-form-status][data-state="error"] { color: #ff8566; }
+  [data-form-status][data-state="pending"] { color: var(--color-fg-muted); }
+</style>

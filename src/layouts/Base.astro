@@ -8,7 +8,7 @@ export interface Props {
 }
 
 const {
-  title = "Delong's Webpages — Fast websites for small business",
+  title = "Delong Webpages — Fast websites for small business",
   description = "Handcrafted websites that load fast, look great, and bring in customers. $1,000 per page. Built by one developer who actually answers the phone.",
   image = "/og-image.svg",
 } = Astro.props;
@@ -60,7 +60,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
-      "name": "Delong's Webpages",
+      "name": "Delong Webpages",
       "description": description,
       "url": Astro.site?.toString(),
       "priceRange": "$$",

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://delongswebpages.com/sitemap-index.xml
+Sitemap: https://delongwebpages.com/sitemap-index.xml

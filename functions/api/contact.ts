@@ -6,7 +6,7 @@
 interface Env {
   CONTACT_RECIPIENT?: string;
   RESEND_API_KEY?: string;
-  RESEND_FROM?: string; // e.g. "Delong Webpages <hello@delongswebpages.com>"
+  RESEND_FROM?: string; // e.g. "Delong Webpages <cdelong@delongwebpages.com>"
 }
 
 interface Submission {
@@ -76,7 +76,7 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
   ].join("\n");
 
   const html = `
-    <h2>New lead from delongswebpages.com</h2>
+    <h2>New lead from delongwebpages.com</h2>
     <p><strong>Name:</strong> ${escape(name)}</p>
     <p><strong>Email:</strong> <a href="mailto:${escape(email)}">${escape(email)}</a></p>
     <p><strong>Business:</strong> ${escape(data.business || "—")}</p>
@@ -96,7 +96,7 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          from: env.RESEND_FROM || "Delong Webpages <onboarding@resend.dev>",
+          from: env.RESEND_FROM || "Delong Webpages <cdelong@delongwebpages.com>",
           to: [recipient],
           reply_to: email,
           subject,

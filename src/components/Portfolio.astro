@@ -1,27 +1,22 @@
 ---
-// PLACEHOLDER projects — swap with real screenshots + URLs after launch
-// Replace `image` with `/portfolio/your-screenshot.webp` once you drop screenshots in public/portfolio/
 const projects = [
   {
-    name: "Northpoint Plumbing",
-    type: "Service business",
-    description: "Local plumbing company. 3-page site with emergency contact, service area map, and 24h call form.",
-    tags: ["Multi-page", "Service business", "Lead form"],
-    accent: "from-[#7C5CFF] to-[#22D3EE]",
+    name: "Delong's Property Maintenance",
+    type: "Property maintenance",
+    description: "Local mowing, landscaping, repairs, and pressure washing. Single-page site with photo collage hero, service cards, and direct call CTA.",
+    tags: ["Single-page", "Service business", "Local SEO"],
+    accent: "from-[#16271d] to-[#3d7a5d]",
+    accentDot: "#d6a44a",
+    url: "https://github.com/cdelongmmc/delongs-property-maintenance",
   },
   {
-    name: "Harvest & Hearth",
-    type: "Restaurant",
-    description: "Farm-to-table restaurant. One scrolling page with menu, hours, gallery, and reservation link.",
-    tags: ["Single-page", "Restaurant", "Photo gallery"],
-    accent: "from-[#FF6B4A] to-[#7C5CFF]",
-  },
-  {
-    name: "Birchwood Studio",
-    type: "Boutique",
-    description: "Custom furniture studio. Portfolio-style site that shows the work and books consultations.",
-    tags: ["Multi-page", "Portfolio", "Booking"],
-    accent: "from-[#22D3EE] to-[#FF6B4A]",
+    name: "Filipe Dusi",
+    type: "Coaching & finance",
+    description: "4-page site for a performance and finance coach. \"Freedom Through Discipline\" — covers coaching services, bio, and a book-a-call contact page.",
+    tags: ["Multi-page", "Coaching", "Finance"],
+    accent: "from-[#0a0e1a] to-[#1e2a4a]",
+    accentDot: "#22D3EE",
+    url: "https://github.com/cdelongmmc/filipe-dusi-website",
   },
 ];
 ---
@@ -41,11 +36,11 @@ const projects = [
       </a>
     </div>
 
-    <div class="mt-16 grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+    <div class="mt-16 grid md:grid-cols-2 gap-5 max-w-3xl">
       {projects.map((p) => (
         <article class="reveal card overflow-hidden group">
           <div class={`relative aspect-[4/3] overflow-hidden bg-gradient-to-br ${p.accent}`}>
-            <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.2),transparent_50%)]"></div>
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.08),transparent_60%)]"></div>
             <!-- Mock browser chrome -->
             <div class="absolute top-4 left-4 right-4 h-6 rounded-md bg-black/30 backdrop-blur-sm flex items-center gap-1.5 px-2">
               <span class="h-2 w-2 rounded-full bg-white/40"></span>
@@ -56,7 +51,7 @@ const projects = [
             <div class="absolute inset-x-6 bottom-6 space-y-2">
               <div class="h-3 w-3/4 rounded-full bg-white/30"></div>
               <div class="h-3 w-1/2 rounded-full bg-white/20"></div>
-              <div class="h-8 w-28 rounded-full bg-white/40 mt-4"></div>
+              <div class="h-8 w-28 rounded-full mt-4" style={`background:${p.accentDot}55`}></div>
             </div>
             <!-- Hover overlay -->
             <div class="absolute inset-0 bg-[var(--color-bg)]/0 group-hover:bg-[var(--color-bg)]/20 transition-colors duration-500"></div>
@@ -74,9 +69,5 @@ const projects = [
         </article>
       ))}
     </div>
-
-    <p class="mt-10 text-center text-sm text-[var(--color-fg-dim)] reveal">
-      <em>Project mockups shown — real screenshots being added. Want to be next?</em>
-    </p>
   </div>
 </section>
